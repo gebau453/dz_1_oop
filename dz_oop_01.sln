@@ -1,31 +1,96 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dz_oop_01", "dz_oop_01.vcxproj", "{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Debug|x64.ActiveCfg = Debug|x64
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Debug|x64.Build.0 = Debug|x64
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Debug|x86.ActiveCfg = Debug|Win32
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Debug|x86.Build.0 = Debug|Win32
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Release|x64.ActiveCfg = Release|x64
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Release|x64.Build.0 = Release|x64
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Release|x86.ActiveCfg = Release|Win32
-		{5B98FD3C-FF8F-42E8-8244-6CB4F29C887F}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4239277A-D185-4BFA-B55C-4A9062C0A436}
-	EndGlobalSection
-EndGlobal
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+class Kettle {
+public:
+    string brand;
+    int capacity;
+
+    Kettle(string b, int c) {
+        brand = b;
+        capacity = c;
+    }
+
+    void info() {
+        cout << "Електрочайник: " << brand << ", " << capacity << " мл\n";
+    }
+};
+
+class Book {
+public:
+    string title;
+    string author;
+
+    Book(string t, string a) {
+        title = t;
+        author = a;
+    }
+
+    void info() {
+        cout << "Книга:" << title << " автора " << author << "\n";
+    }
+};
+
+class Phone {
+public:
+    string model;
+    int storageGB;
+
+    Phone(string m, int s) {
+        model = m;
+        storageGB = s;
+    }
+
+    void info() {
+        cout << "Телефон: " << model << ", " << storageGB << " ГБ\n";
+    }
+};
+
+class Pen {
+public:
+    string color;
+    bool gel;
+
+    Pen(string c, bool g) {
+        color = c;
+        gel = g;
+    }
+
+    void info() {
+        cout << "Ручка: " << (gel ? "гелева" : "звичайна") << ", колір " << color << "\n";
+    }
+};
+
+class Banknote {
+public:
+    int value;
+    string currency;
+
+    Banknote(int v, string cur) {
+        value = v;
+        currency = cur;
+    }
+
+    void info() {
+        cout << "Купюра: " << value << " " << currency << "\n";
+    }
+};
+
+int main() {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    Kettle k("Philips", 1500);
+    Book b("Тіні забутих предків", "Михайло Коцюбинський");
+    Phone p("iPhone 13", 128);
+    Pen pen("синій", true);
+    Banknote note(1000, "гривень");
+
+    k.info();
+    b.info();
+    p.info();
+    pen.info();
+    note.info();
+
+    
+}
