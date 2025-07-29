@@ -1,195 +1,118 @@
 #include <iostream>
-#include <windows.h>
-using namespace std;
-
-class Kettle {
-public:
-    string brand;
-    int capacity;
-    int* temperatures;
-
-    Kettle(string brand, int capacity) {
-        this->brand = brand;
-        this->capacity = capacity;
-        this->temperatures = nullptr;
-    }
-
-    Kettle() : Kettle("NoName", 0) {}
-
-    void setBrand(string brand) {
-        this->brand = brand;
-    }
-
-    void setCapacity(int capacity) {
-        this->capacity = capacity;
-    }
-
-    void setTemperatures(int* temperatures) {
-        this->temperatures = temperatures;
-    }
-
-    int* getTemperatures() {
-        return this->temperatures;
-    }
-
-    void info() {
-        cout << "Електрочайник: " << brand << ", " << capacity << " мл\n";
-    }
-};
-
-class Book {
-public:
-    string title;
-    string author;
-    int* pages;
-
-    Book(string title, string author) {
-        this->title = title;
-        this->author = author;
-        this->pages = nullptr;
-    }
-
-    Book() : Book("Без назви", "Невідомий автор") {}
-
-    void setTitle(string title) {
-        this->title = title;
-    }
-
-    void setAuthor(string author) {
-        this->author = author;
-    }
-
-    void setPages(int* pages) {
-        this->pages = pages;
-    }
-
-    int* getPages() {
-        return this->pages;
-    }
-
-    void info() {
-        cout << "Книга: " << title << " автора " << author << "\n";
-    }
-};
-
-class Phone {
-public:
-    string model;
-    int storageGB;
-    string* installedApps;
-
-    Phone(string model, int storageGB) {
-        this->model = model;
-        this->storageGB = storageGB;
-        this->installedApps = nullptr;
-    }
-
-    Phone() : Phone("Unknown", 0) {}
-
-    void setModel(string model) {
-        this->model = model;
-    }
-
-    void setStorageGB(int storageGB) {
-        this->storageGB = storageGB;
-    }
-
-    void setInstalledApps(string* installedApps) {
-        this->installedApps = installedApps;
-    }
-
-    string* getInstalledApps() {
-        return this->installedApps;
-    }
-
-    void info() {
-        cout << "Телефон: " << model << ", " << storageGB << " ГБ\n";
-    }
-};
-
-class Pen {
-public:
-    string color;
-    bool gel;
-    char* strokes;
-
-    Pen(string color, bool gel) {
-        this->color = color;
-        this->gel = gel;
-        this->strokes = nullptr;
-    }
-
-    Pen() : Pen("чорний", false) {}
-
-    void setColor(string color) {
-        this->color = color;
-    }
-
-    void setGel(bool gel) {
-        this->gel = gel;
-    }
-
-    void setStrokes(char* strokes) {
-        this->strokes = strokes;
-    }
-
-    char* getStrokes() {
-        return this->strokes;
-    }
-
-    void info() {
-        cout << "Ручка: " << (gel ? "гелева" : "звичайна") << ", колір " << color << "\n";
-    }
-};
-
-class Banknote {
-public:
-    int value;
-    string currency;
-    int* serialDigits;
-
-    Banknote(int value, string currency) {
-        this->value = value;
-        this->currency = currency;
-        this->serialDigits = nullptr;
-    }
-
-    Banknote() : Banknote(0, "невідомо") {}
-
-    void setValue(int value) {
-        this->value = value;
-    }
-
-    void setCurrency(string currency) {
-        this->currency = currency;
-    }
-
-    void setSerialDigits(int* serialDigits) {
-        this->serialDigits = serialDigits;
-    }
-
-    int* getSerialDigits() {
-        return this->serialDigits;
-    }
-
-    void info() {
-        cout << "Купюра: " << value << " " << currency << "\n";
-    }
-};
-
-int main() {
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
-
-    Kettle k("Philips", 1500);
-    Book b("Тіні забутих предків", "Михайло Коцюбинський");
-    Phone p("iPhone 13", 128);
-    Pen pen("синій", true);
-    Banknote note(1000, "гривень");
-
-    k.info();
-    b.info();
-    p.info();
-    pen.info();
-    note.info();
-}
+//#include <windows.h>
+//using namespace std;
+//
+//class Kettle {
+//public:
+//    string brand;
+//    int capacity;
+//
+//    Kettle(string brand, int capacity) {
+//        this->brand = brand;
+//        this->capacity = capacity;
+//    }
+//
+//    void setBrand(string brand) {
+//        this->brand = brand;
+//    }
+//
+//    void setCapacity(int capacity) {
+//        this->capacity = capacity;
+//    }
+//
+//    void info() {
+//        cout << "Електрочайник: " << brand << ", " << capacity << " мл\n";
+//    }
+//};
+//
+//class Book {
+//public:
+//    string title;
+//    string author;
+//
+//    Book(string title, string author) {
+//        this->title = title;
+//        this->author = author;
+//    }
+//
+//    void setTitle(string title) {
+//        this->title = title;
+//    }
+//
+//    void setAuthor(string author) {
+//        this->author = author;
+//    }
+//
+//    void info() {
+//        cout << "Книга: " << title << " автора " << author << "\n";
+//    }
+//};
+//
+//class Phone {
+//public:
+//    string model;
+//    int storageGB;
+//
+//    Phone(string model, int storageGB) {
+//        this->model = model;
+//        this->storageGB = storageGB;
+//    }
+//
+//    void setModel(string model) {
+//        this->model = model;
+//    }
+//
+//    void setStorageGB(int storageGB) {
+//        this->storageGB = storageGB;
+//    }
+//
+//    void info() {
+//        cout << "Телефон: " << model << ", " << storageGB << " ГБ\n";
+//    }
+//};
+//
+//class Pen {
+//public:
+//    string color;
+//    bool gel;
+//
+//    Pen(string color, bool gel) {
+//        this->color = color;
+//        this->gel = gel;
+//    }
+//
+//    void setColor(string color) {
+//        this->color = color;
+//    }
+//
+//    void setGel(bool gel) {
+//        this->gel = gel;
+//    }
+//
+//    void info() {
+//        cout << "Ручка: " << (gel ? "гелева" : "звичайна") << ", колір " << color << "\n";
+//    }
+//};
+//
+//class Banknote {
+//public:
+//    int value;
+//    string currency;
+//
+//    Banknote(int value, string currency) {
+//        this->value = value;
+//        this->currency = currency;
+//    }
+//
+//    void setValue(int value) {
+//        this->value = value;
+//    }
+//
+//    void setCurrency(string currency) {
+//        this->currency = currency;
+//    }
+//
+//    void info() {
+//        cout << "Купюра: " << value << " " << currency << "\n";
+//    }
+//};
